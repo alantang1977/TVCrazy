@@ -1,4 +1,5 @@
 ﻿host,ip,port,protocol,title,domain,country,city,link,org
+112.27.235.94:8000,112.27.235.94:8000,http,广州越秀,,CN,Tangshan,http://112.27.235.94:8000,CHINA UNICOM China169 Backbone
 121.21.209.160:8899,121.21.209.160,8899,http,丰润张力,,CN,Tangshan,http://121.21.209.160:8899,CHINA UNICOM China169 Backbone
 42.234.100.99:9999,42.234.100.99,9999,http,邓州港湾酒店,,CN,Nanyang,http://42.234.100.99:9999,CHINA UNICOM China169 Backbone
 182.122.74.118:8089,182.122.74.118,8089,http,铂宫酒店综合管理系统,,CN,Pingdingshan,http://182.122.74.118:8089,CHINA UNICOM China169 Backbone
@@ -689,3 +690,4 @@
 49.221.17.1:808,49.221.17.1,808,http,,,,,http://49.221.17.1:808,
 58.20.202.1:808,58.20.202.1,808,http,,,,,http://58.20.202.1:808,
 220.167.113.1:8033,220.167.113.1,8033,http,,,,,http://220.167.113.1:8033,
+
