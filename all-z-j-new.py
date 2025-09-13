@@ -192,7 +192,7 @@ async def get_channels_newnew(csv_file):
         results = await asyncio.gather(*tasks)
         return [channel for sublist in results for channel in sublist]
 
-# zhgxtv模式获取频道
+# zhgxtv_bak.csv模式获取频道
 def get_channels_hgxtv(csv_file):
     urls = set()
     with open(csv_file, 'r', encoding='utf-8-sig') as csvfile:
@@ -210,7 +210,7 @@ def get_channels_hgxtv(csv_file):
         base_url = url[:ip_start]
         ip_address = url[ip_start:ip_end]
         port = url[ip_end:]
-        ip_range_urls.extend(generate_ip_range_urls(base_url, ip_address, port, "/ZHGXTV/Public/json/live_interface.txt"))
+        ip_range_urls.extend(generate_ip_range_urls(base_url, ip_address, port, "/zhgxtv_bak.csv/Public/json/live_interface.txt"))
 
     valid_urls = check_urls_concurrent(set(ip_range_urls))
     channels = []
@@ -356,15 +356,15 @@ def main():
     parser = argparse.ArgumentParser(description='多模式IPTV频道批量探测与测速')
     parser.add_argument('--jsmpeg', help='jsmpeg-streamer模式csv文件')
     parser.add_argument('--txiptv', help='txiptv模式csv文件')
-    parser.add_argument('--zhgxtv', help='zhgxtv模式csv文件')
+    parser.add_argument('--zhgxtv_bak.csv', help='zhgxtv_bak.csv模式csv文件')
     parser.add_argument('--output', default='itvlist', help='输出文件前缀')
     args = parser.parse_args()
 
     channels = []
     if args.jsmpeg:
         channels.extend(get_channels_alltv(args.jsmpeg))
-    if args.zhgxtv:
-        channels.extend(get_channels_hgxtv(args.zhgxtv))
+    if args.zhgxtv_bak.csv:
+        channels.extend(get_channels_hgxtv(args.zhgxtv_bak.csv))
     if args.txiptv:
         channels.extend(asyncio.run(get_channels_newnew(args.txiptv)))
 
@@ -376,3 +376,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
