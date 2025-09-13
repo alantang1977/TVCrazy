@@ -30,7 +30,7 @@ jobs:
 
       - name: Run script
         run: |
-          python all-z-j-new.py --jsmpeg jsmpeg.csv --txiptv txiptv.csv --zhgxtv zhgxtv_bak.csv --output output/itvlist
+          python all-z-j-new.py --jsmpeg jsmpeg.csv --txiptv txiptv.csv --zhgxtv zhgxtv.csv --output output/itvlist
 
       - name: Commit and push changes
         run: |
